@@ -12,6 +12,14 @@ function App() {
       gradient: "from-blue-400 to-cyan-300"
     },
     {
+      title: "Wi Go",
+      description: "App ta3 VTC kima inDrive, win l client howa li yproposer prix. System d'enchère win les chauffeurs ynegociw m3ak. Real-time tracking w securité tal3a.",
+      tags: ["Flutter", "Dart", "Supabase"],
+      url: "https://taxi-bay.vercel.app/customer/dashboard",
+      image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=2940&auto=format&fit=crop",
+      gradient: "from-purple-500 to-indigo-500"
+    },
+    {
       title: "Nabda",
       description: "App ta3 pharmacie delivery, tawsil rapide l dwa dyalek. Tscanner l'ordonnance, tsuivie l livreur, w gestion d'inventaire sahal lel les pharmacies.",
       tags: ["Flutter", "Dart"],
