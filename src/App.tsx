@@ -4,6 +4,14 @@ import { Hero } from './components/Hero';
 function App() {
   const projects = [
     {
+      title: "Docimon AI SaaS",
+      description: "SaaS b data ha9i9iya ta3 docimon. Ay wehed yahtaj dwa w yhab yes9si 3lih, ma 3lih ghir yes9si l'AI w ymedlou l'dwa l'ansab lih directement.",
+      tags: ["AI", "React", "SaaS"],
+      url: "https://amine-dz.vercel.app/",
+      image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2940&auto=format&fit=crop",
+      gradient: "from-indigo-500 to-blue-400"
+    },
+    {
       title: "Serve Me",
       description: "Plateforme service provider win te9der tel9a les professionnels li ta7tajhom. Booking f wa9tou (Real-time), paiment securisé, w map interactive bach tchoof win rahom les services.",
       tags: ["Flutter", "Dart", "cach"],
