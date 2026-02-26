@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
+import { ArrowRight, Facebook, Github, Linkedin, Mail } from 'lucide-react';
 
 export const Hero = () => {
     return (
@@ -57,11 +57,13 @@ export const Hero = () => {
                         </button>
 
                         <div className="flex items-center gap-6 text-slate-400">
-                            <a href="#" className="hover:text-white transition-colors"><Github size={24} /></a>
-                            <a href="#" className="hover:text-white transition-colors"><Linkedin size={24} /></a>
-                            <a href="#" className="hover:text-white transition-colors"><Mail size={24} /></a>
+                            <a href="https://github.com/jacoubbakhouche" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors"><Github size={24} /></a>
+                            <a href="https://www.linkedin.com/in/jacoubbakhouche/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors"><Linkedin size={24} /></a>
+                            <a href="https://www.facebook.com/jacoub.bakhouche/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors"><Facebook size={24} /></a>
+                            <a href="mailto:jacoubbakhouche@gmail.com" className="hover:text-white transition-colors"><Mail size={24} /></a>
                         </div>
                     </motion.div>
+
                 </div>
 
                 {/* Right Image Area */}
