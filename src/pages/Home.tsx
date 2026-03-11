@@ -28,7 +28,7 @@ export function Home() {
             <section id="projects" className="space-y-32 pb-32">
                 <div className="flex justify-between items-end mb-12">
                     <div>
-                        <h2 className="text-3xl font-bold tracking-tight text-slate-100">Featured Projects</h2>
+                        <h2 className="text-3xl font-bold tracking-tight text-white">Featured Projects</h2>
                         <p className="text-slate-400 mt-2">A selection of my recent work</p>
                     </div>
                     <Link

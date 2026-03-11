@@ -63,8 +63,8 @@ export const projects: Project[] = [
     {
         id: "saas-ai",
         title: "Pharmasssit | Smart Pharmacy Assistant",
-        description: "An advanced RAG-powered pharmacy assistant that provides secure, accurate medication consultations. Built with Supabase Edge Functions for ultra-fast response times and zero-hallucination accuracy based on official medical databases.",
-        tags: ["flutter", "dart", "SaaS"],
+        description: "An advanced RAG-powered pharmacy assistant that provides secure, accurate medication consultations. Built with SQL   for ultra-fast response times and zero-hallucination accuracy based on official medical databases.",
+        tags: ["flutter", "dart", "SQL"],
         url: "https://amine-dz.vercel.app/",
         image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2940&auto=format&fit=crop",
         gradient: "from-indigo-500 to-blue-400",
@@ -74,7 +74,7 @@ export const projects: Project[] = [
         id: "serve-me",
         title: "Serve Me",
         description: "Plateforme service provider win te9der tel9a les professionnels li ta7tajhom. Booking f wa9tou (Real-time), paiment securisé, w map interactive bach tchoof win rahom les services.",
-        tags: ["Flutter", "Dart", "cach"],
+        tags: ["Flutter", "Dart", "SQL"],
         url: "https://www.serveme-app.org/dashboard", // Placeholder
         image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=2500&auto=format&fit=crop",
         gradient: "from-blue-400 to-cyan-300",
@@ -84,7 +84,7 @@ export const projects: Project[] = [
         id: "wi-go",
         title: "Wi Go",
         description: "App ta3 VTC kima inDrive",
-        tags: ["Flutter", "Dart", "Supabase"],
+        tags: ["Flutter", "Dart", "SQL"],
         url: "https://taxi-bay.vercel.app/customer/dashboard",
         image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=2940&auto=format&fit=crop",
         gradient: "from-purple-500 to-indigo-500",
@@ -118,6 +118,16 @@ export const projects: Project[] = [
         url: "https://tabibi-five.vercel.app/login",
         image: "https://images.unsplash.com/photo-1576091160550-2187d80018fd?q=80&w=2940&auto=format&fit=crop",
         gradient: "from-emerald-500 to-teal-400",
+        featured: true
+    },
+    {
+        id: "essenza-shopping",
+        title: "ESSENZA Shopping",
+        description: "ESSENZA Shopping is a premium e-commerce web application designed for a modern shopping experience. Featuring a clean, responsive interface, it allows users to browse products, manage their cart, and track orders with ease. Built with Dart, Flutter, and SQL, and powered by Supabase for real-time data and authentication, the platform offers a seamless and high-performance shopping journey from discovery to checkout.",
+        tags: ["E-commerce", "Flutter", "DART", "SQL"],
+        url: "https://la-rose-de-guelma.vercel.app/",
+        image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2940&auto=format&fit=crop",
+        gradient: "from-rose-500 to-pink-400",
         featured: true
     }
 ];
