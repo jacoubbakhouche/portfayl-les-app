@@ -65,15 +65,25 @@ export function ProjectDetails() {
                     <div className="space-y-6">
                         <div className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
                             <h3 className="text-lg font-semibold text-slate-200 mb-4">Live Demo</h3>
-                            <a
-                                href={project.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex items-center justify-center gap-2 w-full px-6 py-4 bg-white text-slate-950 rounded-xl font-bold hover:bg-slate-200 transition-colors shadow-lg active:scale-95"
-                            >
-                                Visit Website
-                                <ExternalLink size={20} />
-                            </a>
+                            {project.url.startsWith('/') ? (
+                                <Link
+                                    to={project.url}
+                                    className="flex items-center justify-center gap-2 w-full px-6 py-4 bg-white text-slate-950 rounded-xl font-bold hover:bg-slate-200 transition-colors shadow-lg active:scale-95"
+                                >
+                                    Visit Demo
+                                    <ExternalLink size={20} />
+                                </Link>
+                            ) : (
+                                <a
+                                    href={project.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center justify-center gap-2 w-full px-6 py-4 bg-white text-slate-950 rounded-xl font-bold hover:bg-slate-200 transition-colors shadow-lg active:scale-95"
+                                >
+                                    Visit Website
+                                    <ExternalLink size={20} />
+                                </a>
+                            )}
                         </div>
                     </div>
                 </div>

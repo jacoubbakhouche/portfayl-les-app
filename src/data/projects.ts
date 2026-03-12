@@ -7,6 +7,7 @@ export interface Project {
     image?: string;
     gradient: string;
     featured: boolean;
+    isPrivate?: boolean;
 }
 
 export const projects: Project[] = [
@@ -95,10 +96,11 @@ export const projects: Project[] = [
         title: "Nabda",
         description: "App ta3 pharmacie delivery, tawsil rapide l dwa dyalek. Tscanner l'ordonnance, tsuivie l livreur, w gestion d'inventaire sahal lel les pharmacies.",
         tags: ["Flutter", "Dart"],
-        url: "https://mon-ange-mom-companion.vercel.app/", // Placeholder
-        image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2940&auto=format&fit=crop",
+        url: "/nabda-demo", // Link to the new premium demo
+        image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=2940&auto=format&fit=crop", // Improved medical/wellbeing image
         gradient: "from-emerald-400 to-teal-300",
-        featured: true
+        featured: true,
+        isPrivate: true
     },
     {
         id: "laya-style",

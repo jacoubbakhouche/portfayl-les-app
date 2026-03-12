@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { projects } from '../data/projects';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Lock } from 'lucide-react';
+import { cn } from '../lib/utils';
 
 export function ProjectCarousel() {
     const exploratoryProjects = projects.filter(p => !p.featured);
@@ -34,23 +35,44 @@ export function ProjectCarousel() {
                     {[...exploratoryProjects, ...exploratoryProjects].map((project, idx) => (
                         <Link
                             key={`${project.id}-${idx}`}
-                            to={`/works/${project.id}`}
-                            className="flex-shrink-0 w-80 group relative rounded-2xl overflow-hidden aspect-video bg-slate-900 border border-slate-800 hover:border-slate-700 transition-colors"
+                            to={project.isPrivate ? '#' : `/works/${project.id}`}
+                            className={cn(
+                                "flex-shrink-0 w-80 group relative rounded-2xl overflow-hidden aspect-video bg-slate-900 border border-slate-800 hover:border-slate-700 transition-colors",
+                                project.isPrivate && "cursor-default"
+                            )}
                         >
                             <img
                                 src={project.image}
                                 alt={project.title}
-                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                className={cn(
+                                    "w-full h-full object-cover transition-transform duration-500 group-hover:scale-110",
+                                    project.isPrivate && "blur-sm"
+                                )}
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-60 group-hover:opacity-100 transition-opacity" />
 
                             <div className="absolute inset-x-0 bottom-0 p-4">
                                 <h3 className="text-lg font-bold text-slate-100 truncate">{project.title}</h3>
-                                <div className="flex items-center gap-2 text-blue-400 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                                    <span>View Details</span>
-                                    <ExternalLink size={14} />
-                                </div>
+                                {project.isPrivate ? (
+                                    <div className="flex items-center gap-2 text-slate-500 text-sm mt-1">
+                                        <Lock size={14} />
+                                        <span>Private Concept</span>
+                                    </div>
+                                ) : (
+                                    <div className="flex items-center gap-2 text-blue-400 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                                        <span>View Details</span>
+                                        <ExternalLink size={14} />
+                                    </div>
+                                )}
                             </div>
+
+                            {project.isPrivate && (
+                                <div className="absolute inset-0 flex items-center justify-center bg-slate-950/20 backdrop-blur-[2px]">
+                                    <div className="p-3 rounded-full bg-slate-900/80 border border-white/10">
+                                        <Lock className="w-6 h-6 text-blue-400" />
+                                    </div>
+                                </div>
+                            )}
                         </Link>
                     ))}
                 </motion.div>

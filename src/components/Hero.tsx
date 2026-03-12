@@ -5,12 +5,14 @@ export const Hero = () => {
     return (
         <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-20">
 
-            {/* Background Elements - Optimized for top-half cinematic focus */}
-            <div className="absolute inset-x-0 top-0 h-[70vh] z-0 pointer-events-auto bg-black overflow-hidden">
+            {/* Background Elements - Blended and aligned with tech stack */}
+            <div className="absolute inset-x-0 top-0 h-full z-0 pointer-events-auto bg-black overflow-hidden">
                 <spline-viewer
                     url="https://prod.spline.design/ZXg1vmZUpLQpxwPh/scene.splinecode"
-                    className="w-full h-full absolute inset-0 scale-[1.3] md:scale-[1.5] origin-top translate-y-[-10%]"
+                    className="w-full h-full absolute inset-0 scale-[1.3] md:scale-[1.5] origin-top translate-y-[8%]"
                 ></spline-viewer>
+                {/* Bottom Gradient Fade to hide square edge */}
+                <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-black via-black/80 to-transparent z-10 pointer-events-none" />
             </div>
 
             <div className="container mx-auto px-6 relative z-10 h-full flex flex-col md:flex-row items-center justify-between gap-12 pointer-events-none mt-20 md:mt-32">
@@ -62,7 +64,7 @@ export const Hero = () => {
                             <a href="https://github.com/jacoubbakhouche" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors"><Github size={24} /></a>
                             <a href="https://www.linkedin.com/in/jacoubbakhouche/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors"><Linkedin size={24} /></a>
                             <a href="https://www.facebook.com/jacoub.bakhouche/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors"><Facebook size={24} /></a>
-                            <a href="mailto:jacoubbakhouche@gmail.com" className="hover:text-white transition-colors"><Mail size={24} /></a>
+                            <a href="mailto:yakoubbakhouche011@gmail.com" className="hover:text-white transition-colors"><Mail size={24} /></a>
                         </div>
                     </motion.div>
                 </div>

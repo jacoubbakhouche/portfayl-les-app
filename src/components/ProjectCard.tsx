@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ExternalLink, Smartphone, Monitor, Code2 } from 'lucide-react';
+import { ExternalLink, Smartphone, Monitor, Code2, Lock } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { BrowserMockup } from './ui/BrowserMockup';
 import { cn } from '../lib/utils';
 
@@ -10,6 +11,7 @@ interface Project {
     url: string;
     image?: string;
     gradient: string;
+    isPrivate?: boolean;
 }
 
 interface ProjectCardProps {
@@ -56,14 +58,28 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, reverse = fal
                     </div>
                 </div>
 
-                <div className="w-full flex justify-center perspective-1000">
+                <div className="w-full flex justify-center perspective-1000 relative">
                     <BrowserMockup
                         url={project.url}
                         image={project.image}
                         title={project.title}
                         isMobile={isMobile}
-                        className="shadow-2xl shadow-blue-900/10"
+                        className={cn(
+                            "shadow-2xl shadow-blue-900/10",
+                            project.isPrivate && "blur-md select-none pointer-events-none"
+                        )}
                     />
+
+                    {project.isPrivate && (
+                        <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
+                            <div className="p-6 rounded-full bg-slate-900/80 backdrop-blur-xl border border-white/10 shadow-2xl mb-4 group-hover:scale-110 transition-transform duration-500">
+                                <Lock className="w-12 h-12 text-blue-400" />
+                            </div>
+                            <div className="bg-slate-900/80 backdrop-blur-md px-6 py-2 rounded-full border border-white/10">
+                                <span className="text-white font-bold tracking-widest uppercase text-sm">Personal Project</span>
+                            </div>
+                        </div>
+                    )}
                 </div>
             </div>
 
@@ -99,15 +115,30 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, reverse = fal
                 </div>
 
                 <div className="pt-4">
-                    <a
-                        href={project.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-6 py-3 bg-white text-slate-950 rounded-full font-semibold hover:bg-slate-200 transition-colors shadow-lg shadow-white/5 active:scale-95"
-                    >
-                        Visit Live Project
-                        <ExternalLink size={18} />
-                    </a>
+                    {project.isPrivate ? (
+                        <div className="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 text-slate-400 rounded-full font-semibold cursor-not-allowed border border-slate-700">
+                            Private Project
+                            <Lock size={18} />
+                        </div>
+                    ) : project.url.startsWith('/') ? (
+                        <Link
+                            to={project.url}
+                            className="inline-flex items-center gap-2 px-6 py-3 bg-white text-slate-950 rounded-full font-semibold hover:bg-slate-200 transition-colors shadow-lg shadow-white/5 active:scale-95"
+                        >
+                            Visit Live Project
+                            <ExternalLink size={18} />
+                        </Link>
+                    ) : (
+                        <a
+                            href={project.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 px-6 py-3 bg-white text-slate-950 rounded-full font-semibold hover:bg-slate-200 transition-colors shadow-lg shadow-white/5 active:scale-95"
+                        >
+                            Visit Live Project
+                            <ExternalLink size={18} />
+                        </a>
+                    )}
                 </div>
             </div>
         </div>
