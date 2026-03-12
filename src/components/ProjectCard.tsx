@@ -97,7 +97,10 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, reverse = fal
                         {project.title}
                     </h3>
 
-                    <p className="text-slate-400 text-lg leading-relaxed">
+                    <p className={cn(
+                        "text-slate-400 text-lg leading-relaxed",
+                        project.isPrivate && "blur-sm select-none"
+                    )}>
                         {project.description}
                     </p>
                 </div>
