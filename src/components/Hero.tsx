@@ -7,10 +7,11 @@ export const Hero = () => {
 
             {/* Background Elements - Blended and aligned with tech stack */}
             <div className="absolute inset-x-0 top-0 h-full z-0 pointer-events-auto bg-black overflow-hidden">
+                {/* @ts-ignore - spline-viewer is a custom element */}
                 <spline-viewer
                     url="https://prod.spline.design/ZXg1vmZUpLQpxwPh/scene.splinecode"
                     className="w-full h-full absolute inset-0 scale-[1.3] md:scale-[1.5] origin-top translate-y-[8%]"
-                ></spline-viewer>
+                />
                 {/* Bottom Gradient Fade to hide square edge */}
                 <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-black via-black/80 to-transparent z-10 pointer-events-none" />
             </div>
